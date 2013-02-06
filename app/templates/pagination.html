@@ -1,0 +1,39 @@
+<%if (total>0 && totalPages>1) { %>
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="pagination pagination-centered">
+			<ul>
+				<li <%=(isFirstPage) ? 'class="disabled"':'' %>>
+				<a <%=(isFirstPage) ? 'data-bypass':''%> 
+					href="<%=(isFirstPage) ? '#' : searchBase + '&start=0'%>" class="serverfirst">«</a>
+				</li>
+
+				<li <%=(isFirstPage) ? 'class="disabled"':'' %>>
+				<a <%=(isFirstPage) ? 'data-bypass':''%> 
+					href="<%=(isFirstPage) ? '#' : searchBase + '&start='+(perPage*(currentPage-1))%>" 
+					class="serverprevious">&lt;</a>
+				</li>
+
+				<% for(p=beginIndex;p<endIndex;p++){ %>
+				<% var isCurrentPage = (currentPage === p);%>
+				<li <%=(isCurrentPage)? 'class="active"': '' %>>
+				<a <%=(isCurrentPage) ? 'data-bypass':''%>  
+					href="<%=(isCurrentPage) ? '#': searchBase + '&start=' + (perPage*p)%>" class="page"><%=p+1%></a>
+				</li>
+				<% } %>	
+
+				<li <%=(isLastPage) ? 'class="disabled"': ''%>>
+				<a <%=(isLastPage) ? 'data-bypass':''%> 
+					href="<%=(isLastPage) ? '#' : searchBase + '&start=' + (perPage*(currentPage+1))%>" 
+					class="servernext">&gt;</a>
+				</li>
+				<li <%=(isLastPage) ? 'class="disabled"': ''%>>
+				<a <%=(isLastPage) ? 'data-bypass':''%> 
+					href="<%=(isLastPage) ? '#' : searchBase + '&start=' + (perPage*(totalPages-1))%>" 
+					class="serverlast">»</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<%}%>

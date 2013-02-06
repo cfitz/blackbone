@@ -1,0 +1,19 @@
+Blackbone
+====================
+
+A lightweight search interface inspired by [Blacklight](https://github.com/projectblacklight/blacklight) using the [Solaritas.js](https://github.com/jbarroso/solritajs) Solr client. 
+
+Why?
+---------------------
+
++ Lightweight.
++ Fast.
++ Simple (Once your get the hang of Backbone) 
+
+Quick Very Dirty How-To (Very good chance this will not work right now...)
+---------------------
+
+1. Clone Repo
+2. Install [Yeoman](http://yeoman.io/)
+3. Get some test data. Your best bet is to follow the [Blacklight Quick Start](https://github.com/projectblacklight/blacklight/wiki/Quickstart) to get the Solr Jetty installed, running, and populated with MARC records. 
+4. From the code directory, run "yeoman server" and go to [http://localhost:3501/](http://localhost:3501/).

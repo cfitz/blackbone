@@ -1,0 +1,40 @@
+<div class="well result">
+	<div class="title">
+		<h4><%= title_display.valuehl %></h4>
+	</div>
+	<dl class="dl-horizontal" style="margin:0">
+  	<% if (typeof author_display!=="undefined"  )  {  %>
+  	  <% if (  author_display.length > 1) { %> 
+  	    <dt>Authors</dt>
+  	    <% for(var i=0; i< author_display.length; i++) {%>
+  	  	  <dd><%=features[i].valuehl%></dd>
+  		  <% } %>
+      <%  } else { %>
+        <dt>Author</dt>
+        <dd><%= author_display.valuehl %></dd>
+  	  <% } %>
+  	<% } %>
+  	<% if (typeof format!=="undefined") { %> 
+  		<dt>Format</dt>
+  			<dd><%=format.valuehl%></dd>
+  	<% } %>
+  	<% if (typeof language_facet!=="undefined") { %> 
+  	<dt>Language</dt>
+  		<% for(var i=0; i< language_facet.length; i++) { %>
+  			<dd><%=language_facet[i].valuehl%></dd>
+  		<% } %>
+  	<% } %>
+  	<% if (typeof published_display!=="undefined") { %> 
+  	<dt>Published</dt>
+  		<% for(var i=0; i< published_display.length; i++) { %>
+  			<dd><%=published_display[i].valuehl%></dd>
+  		<% } %>
+  	<% } %>
+    	<% if (typeof lc_callnum_display!=="undefined") { %> 
+  		<dt>Call Number</dt>
+  			<% for(var i=0; i< lc_callnum_display.length; i++) { %>
+  				<dd><%=lc_callnum_display[i].valuehl%></dd>
+  			<% } %>
+  		<% } %>
+  </dl>
+</div>
